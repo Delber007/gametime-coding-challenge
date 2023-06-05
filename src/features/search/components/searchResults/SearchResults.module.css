@@ -1,0 +1,26 @@
+/* Using vw here for responsiveness */
+.mainDiv {
+  /* the box's width and separation between elements will be necessary
+  to calculate other styles later. Following the single sure os truth principle
+  I declare these variables here, so that the children may use it. */
+  --results-box-width: 65vw;
+  --default-10px-separation: 10px;
+  width: var(--results-box-width);
+  border: 1px solid grey;
+  border-top-width: 0px;
+  /* Decided to set results box max width to 50vh only, because in the example image
+  on the challenge file it appereades as if this box was scrollable. I did this to
+  be as faithful to the design as possible. */
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+.resultDiv{
+  padding-right: var(--default-10px-separation);
+  padding-left: var(--default-10px-separation);
+}
+
+
+.resultDiv:hover {
+  background-color: rgb(220, 220, 220);
+}

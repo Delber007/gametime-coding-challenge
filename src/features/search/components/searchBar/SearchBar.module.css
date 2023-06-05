@@ -1,0 +1,54 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+
+/* Using vw here for responsiveness */
+.inputContainer {
+  height: 50px;
+  display: flex;
+  width: 70vw;
+  border-radius: 25px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 1px 1px 1px 1px gray;
+  z-index: 2;
+}
+.inputContainer > * {
+  margin: 5px;
+}
+
+.inputDiv {
+  width: 100%;
+}
+.input {
+  border: 0px solid black;
+  height: 45px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.icon {
+  height: 30px;
+  
+}
+
+.resultsDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.errorText {
+  color: rgb(237, 81, 81);
+  font-size: 20px;
+}

@@ -1,0 +1,86 @@
+
+.mainContainer {
+  --image-size: 50px;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: var(--default-10px-separation);
+  padding-left: var(--default-10px-separation);
+  border-bottom: 0.5px solid grey;
+}
+
+.contentRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.imageDiv {
+  display: flex;
+  align-items: center;
+  margin-right: var(--default-10px-separation);
+}
+
+.imageErrorDiv {
+  height: var(--image-size);
+  width: var(--image-size);
+  background-color: black;
+  padding: 2px;
+}
+
+.imageErrorText {
+  font-size: 10px;
+  color: white;
+}
+
+.image {
+  height: var(--image-size);
+  width: var(--image-size);
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* some titles are really long, or this might be seen in a
+small device, so I added an ellipsis for this cases */
+.title {
+  font-size: 16px;
+  /* The title width is going to be calculated by taking the box's width,
+  and subtract the only other element's width (the image), and all the
+  separation between elements in the box (there are 5 of those default spacing) */
+  width: calc(var(--results-box-width) - var(--default-10px-separation)*5 - var(--image-size));
+  text-align: start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0px 0px 0px 0px;
+}
+
+.susbtitleDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* The subtitle had the same needs as the title in terms of 
+ellipsis and width */
+.subtitle {
+  font-size: 12px;
+  width: calc(60vw - 100px);
+  text-align: start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0px 0px 0px 0px;
+  color: gray;
+}

@@ -1,0 +1,9 @@
+.mainContainer {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.logo {
+  height: 200px;
+}
