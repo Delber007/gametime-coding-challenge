@@ -9,7 +9,7 @@ import styles from "./SearchResults.module.css";
  */
 export default function SearchResults({ results }) {
   return (
-    <div className={styles.mainDiv}>
+    <div className={styles.mainDiv} data-testid="results-div">
       {results.map((value, index) => {
         const { image, title, subtitle } = value;
         return (

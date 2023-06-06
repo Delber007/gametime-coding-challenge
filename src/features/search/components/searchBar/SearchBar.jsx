@@ -37,6 +37,7 @@ export default function SearchBar() {
         </div>
         <div className={styles.inputDiv}>
           <input
+            data-testid={"search-input"}
             className={styles.input}
             type="search"
             placeholder="e.g. Oakland"
@@ -67,7 +68,7 @@ export default function SearchBar() {
  * @param {Object} results
  * @returns {Array}
  */
-function formatResults(results) {
+export function formatResults(results) {
   const { events, performers, venues } = results;
   let list = [];
   // There was no documentation provided for the API,
