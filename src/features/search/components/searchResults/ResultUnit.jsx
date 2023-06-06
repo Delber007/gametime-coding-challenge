@@ -23,21 +23,39 @@ export default function ResultUnit({ image, title, subtitle }) {
             // the image shows a loading animation when it hasn't loaded,
             // I believe it to be more user friendly that just show a blank
             // space or a portion of the image.
-            <img
-              alt={`${title}`}
-              className={styles.image}
-              src={imageLoaded ? image : loadingGif}
-              onError={() => setImageError(true)}
-              onLoad={() => setImageLoaded(true)}
-            />
+            <div>
+              {!imageLoaded ? (
+                <img
+                  hidden={imageLoaded}
+                  alt={"loading"}
+                  className={styles.image}
+                  src={loadingGif}
+                />
+              ) : (
+                <></>
+              )}
+              <img
+                hidden={!imageLoaded}
+                data-testid="result-img"
+                alt={`${title}`}
+                className={styles.image}
+                src={image}
+                onError={() => setImageError(true)}
+                onLoad={() => setImageLoaded(true)}
+              />
+            </div>
           )}
         </div>
         <div className={styles.textContainer}>
           <div className={styles.titleDiv}>
-            <p className={styles.title}>{title}</p>
+            <p data-testid="result-title" className={styles.title}>
+              {title}
+            </p>
           </div>
           <div className={styles.susbtitleDiv}>
-            <p className={styles.subtitle}>{subtitle}</p>
+            <p data-testid="result-subtitle" className={styles.subtitle}>
+              {subtitle}
+            </p>
           </div>
         </div>
       </div>
